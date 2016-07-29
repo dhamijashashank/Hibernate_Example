@@ -2,8 +2,7 @@ package com.krishna.hibernate.dto;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -30,8 +29,9 @@ public class UserDetails {
 	@JoinTable(name="USER_ADDRESS" , 
 		joinColumns=@JoinColumn(name="USER_ID")
 	)
-	@GenericGenerator(name = "hilo-gen", strategy = "hilo")
-	@CollectionId(columns = { @Column(name="ADDRESS_ID") },generator = "hilo-gen", type = @Type(type="long") )
+//	@GenericGenerator(name = "hilo-gen", strategy = "hilo")
+	@GenericGenerator(name="sequence-gen",strategy="sequence")
+	@CollectionId(columns = { @Column(name="ADDRESS_ID") },generator = "sequence-gen", type = @Type(type="long") )
 	Collection<Address> addressColl = new ArrayList<>(); 
 	
 	public Collection<Address> getAddressColl() {
