@@ -4,7 +4,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.krishna.hibernate.dto.Address;
 import com.krishna.hibernate.dto.UserDetails;
 import com.krishna.hibernate.dto.Vehicle;
 
