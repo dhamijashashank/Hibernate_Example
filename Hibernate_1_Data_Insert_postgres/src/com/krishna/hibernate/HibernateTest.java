@@ -12,8 +12,8 @@ public class HibernateTest {
 		// TODO Auto-generated method stub
 		
 		UserDetails usd = new UserDetails();
-		usd.setUserId(2);
-		usd.setUserName("Hare Krishna");
+		usd.setUserId(12);
+		usd.setUserName("1Hare Krishna");
 		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = buildSessionFactory.openSession();
