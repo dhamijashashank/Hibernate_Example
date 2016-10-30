@@ -39,6 +39,7 @@ public class HibernateTest {
 		session.save(usd);
 		session.getTransaction().commit();
 		session.close();
+		buildSessionFactory.close();
 		
 	}
 

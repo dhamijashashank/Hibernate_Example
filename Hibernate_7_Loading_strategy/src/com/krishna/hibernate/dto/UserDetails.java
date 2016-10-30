@@ -26,7 +26,7 @@ public class UserDetails {
 	private int userId;
 	private String userName;
 	
-	//@ElementCollection (fetch=FetchType.LAZY)// this will throw exception org.hibernate.LazyInitializationException: as explained in HiberateTestFile
+	//@ElementCollection (fetch=FetchType.LAZY)// this will throw exception org.hibernate.LazyInitializationException: as explained in HibernateTest File
 	@ElementCollection (fetch=FetchType.EAGER)// this will run successfully
 	@JoinTable(name="USER_ADDRESS" , 
 		joinColumns=@JoinColumn(name="USER_ID")
