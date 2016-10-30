@@ -34,6 +34,7 @@ public class HibernateTest {
 		usd = session.get(UserDetails.class, 1);
 		System.out.println("usd name is "+ usd.getUserName()); 
 		session.close();
+		buildSessionFactory.close();
 		
 		
 
