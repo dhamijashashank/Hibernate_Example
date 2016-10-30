@@ -15,7 +15,7 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://localhost:5434/hibernatedb</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/hibernatedb</property>
         <property name="connection.username">postgres</property>
         <property name="connection.password">postgres</property>
 
@@ -31,8 +31,8 @@
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
-        <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">update</property>
+        <!-- Drop and re-create the database schema on startup update -->
+        <property name="hbm2ddl.auto">create</property>
 
 		<!-- Name the annoted entity class -->
         <mapping class="com.krishna.hibernate.dto.UserDetails"/>

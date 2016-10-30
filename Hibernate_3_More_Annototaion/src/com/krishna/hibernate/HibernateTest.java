@@ -32,7 +32,7 @@ public class HibernateTest {
 		session.save(usd1);
 		session.getTransaction().commit();
 		session.close();
-
+		buildSessionFactory.close();
 	}
 
 }
