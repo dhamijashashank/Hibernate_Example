@@ -17,22 +17,25 @@ public class HibernateTest {
 		
 		Vehicle veh = new Vehicle();
 		veh.setVehicle_name("Swift-CNG");
-		usd.setVehicle(veh);
+		
+
+		Vehicle veh1 = new Vehicle();
+		veh1.setVehicle_name("i20-CNG");
+		
+		usd.getVehicle().add(veh);
+		usd.getVehicle().add(veh1);
+		veh.setUsrObj(usd);
+		veh1.setUsrObj(usd);
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = buildSessionFactory.openSession();
 		session.beginTransaction();
-		// without mapping if we want to store both object in db then we have to explicitly save both of it.
-		//but it is not mandatory to save both object means if we save any one then code runs fine successfully 
-		// if we are using mapping then it is mandatory to save both object in db otherwise it will throw exception.
-		
-		//session.save(usd);
-		//session.save(veh);
-		
-		
+
 		session.save(usd);
 		session.save(veh);
+		session.save(veh1);
 		session.getTransaction().commit();
 		session.close();
+		buildSessionFactory.close();
 		
 	}
 
