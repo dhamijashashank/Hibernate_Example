@@ -35,6 +35,7 @@ public class HibernateTest {
 		session.save(veh1);
 		session.getTransaction().commit();
 		session.close();
+		buildSessionFactory.close();
 		
 	}
 
