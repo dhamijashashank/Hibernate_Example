@@ -19,9 +19,17 @@ public class HibernateTest {
 		Session session = buildSessionFactory.openSession();
 		session.beginTransaction();
 		session.save(usd);
-		session.getTransaction().commit();
-		session.close();
-		buildSessionFactory.close();
+		try {
+			session.getTransaction().commit();	
+		} catch (Exception e) {
+			System.out.println("Exception : "+ e);
+		}
+		finally {
+			session.close();
+			buildSessionFactory.close();
+	
+		}
+		
 
 	}
 

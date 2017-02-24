@@ -21,7 +21,7 @@ public class UserDetails {
 	private int userId;
 //	@Basic(fetch=FetchType.LAZY)//@Basic(fetch=FetchType.EAGER)//
 	private String userName;
-	//If user want that feild is not store in DB make it static or Transiant or use below annotation
+	//If user want that field is not store in DB make it static or Transient or use below annotation
 //	@Transient
 	private String address;
 	 

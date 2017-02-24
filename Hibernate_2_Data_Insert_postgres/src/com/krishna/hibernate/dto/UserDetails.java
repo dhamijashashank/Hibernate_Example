@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity (name="USER_DETAIL")
+@Entity (name="USER_DETAILs")
 public class UserDetails {
 	
 	@Id

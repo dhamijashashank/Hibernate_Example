@@ -18,7 +18,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 
-@Entity (name="USER_DETAIL")
+@Entity (name="USER_DETAIL_6")
 public class UserDetails {
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
@@ -26,7 +26,7 @@ public class UserDetails {
 	private String userName;
 	
 	@ElementCollection
-	@JoinTable(name="USER_ADDRESS" , 
+	@JoinTable(name="USER_ADDRESS_6" , 
 		joinColumns=@JoinColumn(name="USER_ID")
 	)
 //	@GenericGenerator(name = "hilo-gen", strategy = "hilo")

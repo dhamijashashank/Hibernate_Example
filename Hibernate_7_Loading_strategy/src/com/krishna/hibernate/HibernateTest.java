@@ -53,7 +53,7 @@ public class HibernateTest {
 		
 //		The way I like to put it is like this:
 //
-//			EAGER: Convenient, but slow , object is loaded fully in one go so we can access object at any time even after closssing session  
+//			EAGER: Convenient, but slow , object is loaded fully in one go so we can access object at any time even after closing session  
 //			LAZY: More coding, but much more efficient  
 		
 		System.out.println(user.getAddressColl().size());

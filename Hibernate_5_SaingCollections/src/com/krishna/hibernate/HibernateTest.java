@@ -1,5 +1,7 @@
 package com.krishna.hibernate;
 
+import javax.persistence.Embeddable;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -37,10 +39,18 @@ public class HibernateTest {
 		Session session = buildSessionFactory.openSession();
 		session.beginTransaction();
 		session.save(usd);
-		session.getTransaction().commit();
-		session.close();
-		buildSessionFactory.close();
-		
+		try {
+			session.getTransaction().commit();	
+		} catch (Exception e) {
+			System.out.println("Exception : "+ e);
+		}
+		finally {
+			session.close();
+			buildSessionFactory.close();
+	
+		}		
 	}
-
 }
+
+// Use of ElementCollection and @JoinTable(name="XYZ")
+// use of @Embeddable also we use it on top of address class as we didn't want to create seprate table for this 

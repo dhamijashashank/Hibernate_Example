@@ -43,11 +43,20 @@ public class HibernateTest {
 		
 		
 		session.save(usd);
-		session.save(veh);
-		session.getTransaction().commit();
-		session.close();
-		buildSessionFactory.close();
-		
+		session.save(veh);		
+		try {
+			session.getTransaction().commit();	
+		} catch (Exception e) {
+			System.out.println("Exception : "+ e);
+		}
+		finally {
+			session.close();
+			buildSessionFactory.close();
+	
+		}		
 	}
-
 }
+
+
+// As per my analysis its mandatory to save both object otherwise we get exception in our code.
+// 

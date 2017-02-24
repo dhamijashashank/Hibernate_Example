@@ -11,7 +11,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-@Entity (name="USER_DETAIL")
+@Entity (name="USER_DETAIL_Example_4")
 public class UserDetails {
 	
 	@Id

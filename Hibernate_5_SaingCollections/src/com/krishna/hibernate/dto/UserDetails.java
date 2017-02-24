@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 
 
-@Entity (name="USER_DETAIL")
+@Entity (name="USER_DETAIL_5")
 public class UserDetails {
 	
 	@Id
@@ -17,7 +17,8 @@ public class UserDetails {
 	private String userName;
 	
 	@ElementCollection
-	@JoinTable(name="USER_ADDRESS")
+	@JoinTable(name="USER_ADDRESS_5") // Purpose of this to just rename table name which is byDeault BaseClassTableName_ElementCollectionAttributeName
+	// Default Name = USER_DETAIL_5_addressColl
 	Set<Address> addressColl = new HashSet<>(); 
 	
 	public Set<Address> getAddressColl() {
