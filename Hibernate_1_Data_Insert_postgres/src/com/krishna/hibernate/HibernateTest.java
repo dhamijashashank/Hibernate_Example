@@ -12,16 +12,29 @@ public class HibernateTest {
 		// TODO Auto-generated method stub
 		
 		UserDetails usd = new UserDetails();
-		usd.setUserId(12);
-		usd.setUserName("1Hare Krishna");
+		usd.setUserId(112);
+		usd.setUserName("Hare Krishna");
 		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = buildSessionFactory.openSession();
 		session.beginTransaction();
 		session.save(usd);
-		session.getTransaction().commit();
-		session.close();
-
+		try {
+			session.getTransaction().commit();	
+		} catch (Exception e) {
+			System.out.println("Exception : "+ e);
+		}
+		finally {
+			session.close();
+			buildSessionFactory.close();
+	
+		}
+		
 	}
 
 }
+
+
+// its better to put commit in try catch block because if commit throw any
+// exception then we can handle that and close of session and sessionfraction
+// must be present in finally block  
